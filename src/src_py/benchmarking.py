@@ -9,18 +9,39 @@ class benchmarking:
 
     def __init__(self):
         print("benchmarking instanciado")
-        self.mO = metodosOrdenamiento()
-        arreglo = self.build_arreglo(10000)
-        b = lambda: self.mO.sort_bubble(arreglo)
-        bm = lambda:self.mO.sort_bubble_mejorado(arreglo)
-        s = lambda:self.mO.sort_seleccion(arreglo)
-        timpoN = self.contar_con_nano_time(b)
-        tiempoB = self.contar_con_nano_time(bm)
-        tiempoS = self.contar_con_nano_time(s)
+        
+        
+    def medir_tiempo(self, funcion, arreglo):
+        inicio = time.perf_counter()
+        funcion(arreglo)
+        fin = time.perf_counter()
+        return fin - inicio
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        # self.mO = metodosOrdenamiento()
+        # arreglo = self.build_arreglo(10000)
+        # b = lambda: self.mO.sort_bubble(arreglo)
+        # bm = lambda:self.mO.sort_bubble_mejorado(arreglo)
+        # s = lambda:self.mO.sort_seleccion(arreglo)
+        # timpoN = self.contar_con_nano_time(b)
+        # tiempoB = self.contar_con_nano_time(bm)
+        # tiempoS = self.contar_con_nano_time(s)
 
-        print(f" timepo burbuja normal " + str(timpoN))
-        print(f" tiempo con burbuja mejorada "  + str(timpoN))
-        print(f" tiempo con seleccion" + str(tiempoS))
+        # print(f" timepo burbuja normal " + str(timpoN))
+        # print(f" tiempo con burbuja mejorada "  + str(timpoN))
+        # print(f" tiempo con seleccion" + str(tiempoS))
 
     def build_arreglo (self, tamano):
             arreglo = []

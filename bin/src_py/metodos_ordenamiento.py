@@ -18,8 +18,8 @@ class metodosOrdenamiento:
         for i in range (n -1):
             cambio = False
             for j in range( n - i - 1):
-                 if arreglo[i] > arreglo[j]:
-                    arreglo[i], arreglo[j] = arreglo[j], arreglo [i]
+                if array[i] > array[j]:
+                    array[i], array[j] = array[j], array [i]
                     cambio = True
             if cambio == False:
                 break
@@ -28,7 +28,11 @@ class metodosOrdenamiento:
     def sort_seleccion(self, array):
         n = len(array)
         for i in range (n - 1):
-            aux = array[i]
+            aux = i
             for j in range (i + 1 , n):
+                if array[j] < array[aux]:
+                    aux = j
+            if aux != i:
+                array[i], array[aux] = array[aux] , array[i]
 
 
