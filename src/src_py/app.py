@@ -1,6 +1,10 @@
 from benchmarking import benchmarking
 import benchmarking as bm
 from metodos_ordenamiento import metodosOrdenamiento
+import matplotlib.pyplot as plt
+
+
+
 #from metodos_ordenamiento import metodosOrdenamiento
 
 #from benchmarking import benchmarking  ( segunda forma de importar)
@@ -38,4 +42,26 @@ for tam in tamanio:
 
     # benchmarking()
       # Ejecuta el constructor
-    
+      
+      
+      
+      # prepara datos para ser graficos
+      #1 crear un diccionario o map para almacenar los resultados por metodos
+tiempos_by_metodos = {
+  "burbuja":[],
+  "burbuja_mejorado":[],
+  "seleccion":[],
+  "shell":[],
+  }
+
+for tam,nombre,tiempo_resultado in resultados:
+  tiempos_by_metodos[nombre].append(tiempos_by_metodos)
+  
+  
+  plt.figure(figsize=(10,6))
+  
+  for tam, nombre in tiempos_by_metodos:
+    nombre,  tiempos_by_metodos.items():
+    plt.plot, tiempos_by_metodos,
+  
+  
